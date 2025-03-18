@@ -10,7 +10,7 @@
     "tray"
   ],
   "modules-center": [
-    "hyprland/window"
+    "custom/window"
   ],
   "modules-right": [
     "temperature",
@@ -123,5 +123,11 @@
     "format": "  ",
     "tooltip": false,
     "on-click": "exec wlogout -p layer-shell"
+  },
+  "custom/window": {
+        "exec": "~/.config/waybar/get_program_name.sh",
+        "interval": 1,
+        "format": "{}"
   }
+
 }
