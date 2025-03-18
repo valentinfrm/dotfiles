@@ -21,11 +21,6 @@ function fish_user_key_bindings
   bind -M insert -m default kj backward-char force-repaint
 end
 
-# UNCOMMENT FOR RIGHT PROMPT 
-# function fish_right_prompt
-#   echo (set_color 71717a)"$USER"@(prompt_hostname)
-# end
-
 # indicator for vi
 function fish_mode_prompt
   switch "$fish_bind_mode"
@@ -91,12 +86,6 @@ fish_add_path /opt/bin
 set -x EDITOR "vim"
 
 set QT_QPA_PLATFORM xcb
-
-# fzf
-# export FZF_DEFAULT_OPTS="
-# --bind='ctrl-j:down,ctrl-k:up,ctrl-t:toggle-all,ctrl-v:toggle-preview,ctrl-space:toggle-preview'
-# --color=fg:#ffffff,hl:#00ff00,fg+:#a5b4fc,bg+:#737373,hl+:#ffff00,info:#14b8a6,spinner:#00ffff,pointer:#f59e0b
-# "
 
 # TokyoNight Color Palette from https://github.com/folke/tokyonight.nvim/blob/main/extras/fish/tokyonight_storm.fish
 set -l foreground c0caf5
