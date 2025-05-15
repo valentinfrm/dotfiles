@@ -8,6 +8,8 @@ function stay
   nohup $argv > /dev/null 2>&1 < /dev/null & disown
 end
 
+set -gx PATH /opt/homebrew/bin $PATH
+
 # custom greeting
 set KERNEL (uname -r)
 set fish_greeting (set_color --bold efcf40)">"(set_color ef9540)"<"(set_color ea3838)">" \
@@ -17,8 +19,31 @@ set fish_greeting (set_color --bold efcf40)">"(set_color ef9540)"<"(set_color ea
 function fish_user_key_bindings
   fish_vi_key_bindings
 
+function runc; gcc $argv[1] -o /tmp/a.out && /tmp/a.out; end
+
   # set kj to <Esc>
   bind -M insert -m default kj backward-char force-repaint
+end
+
+
+# start ssh agent
+function start-ssh-agent
+	if set -q SSH_AUTO_SOCK
+		echo "ssh already running"
+	else
+		eval (ssh-agent -c)
+	end
+
+	# add keys
+	set ssh_keys ~/.ssh/id_ed25519 ~/.ssh/id_ed25519_github ~/.ssh/keys\ rechnerhalle
+
+	# load keys
+	for key in $ssh_keys
+		if test -f $key
+			ssh-add -l | grep -q (basename $key)
+			or ssh-add $key
+		end
+	end
 end
 
 # indicator for vi
@@ -124,4 +149,3 @@ set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
 set -g fish_pager_color_selected_background --background=$selection
 
-zoxide init fish | source
