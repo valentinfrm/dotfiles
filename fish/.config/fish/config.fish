@@ -35,7 +35,7 @@ function start-ssh-agent
 	end
 
 	# add keys
-	set ssh_keys ~/.ssh/id_ed25519 ~/.ssh/id_ed25519_github ~/.ssh/keys\ rechnerhalle
+	set ssh_keys ~/.ssh/id_ed25519_github
 
 	# load keys
 	for key in $ssh_keys
