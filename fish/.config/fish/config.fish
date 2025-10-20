@@ -26,25 +26,9 @@ function runc; gcc $argv[1] -o /tmp/a.out && /tmp/a.out; end
 end
 
 
-# start ssh agent
-function start-ssh-agent
-	if set -q SSH_AUTO_SOCK
-		echo "ssh already running"
-	else
-		eval (ssh-agent -c)
-	end
 
-	# add keys
-	set ssh_keys ~/.ssh/id_ed25519_github
-
-	# load keys
-	for key in $ssh_keys
-		if test -f $key
-			ssh-add -l | grep -q (basename $key)
-			or ssh-add $key
-		end
-	end
-end
+#SSH-Agent Socket fpr all programs
+set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
 # indicator for vi
 function fish_mode_prompt
