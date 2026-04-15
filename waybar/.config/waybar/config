@@ -1,0 +1,119 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 0,
+  "modules-left": [
+    "clock",
+    "custom/separator",
+    "hyprland/workspaces",
+    "custom/separator",
+    "tray"
+  ],
+  "modules-center": [
+    "custom/window"
+  ],
+  "modules-right": [
+    "temperature",
+    "memory",
+    "cpu",
+    "pulseaudio",
+    "network",
+    "custom/separator",
+    "custom/powermenu"
+  ],
+  "custom/separator": {
+    "exec": "echo \"|\"",
+    "format": "{}"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "clock": {
+    "format": " {:%H:%M} ",
+    "interval": 60,
+    "tooltip": true,
+    "tooltip-format": "{:%d %B %H:%M}"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "separate-outputs": false,
+    "active-only": false,
+    "all-outputs": false,
+    "format-icons": {
+     // "1": "1",
+     // "2": "2",
+     // "3": "3",
+     // "4": "4",
+     // "5": "5",
+     // "6": "6",
+     // "7": "7",
+     // "8": "8",
+     // "9": "9",
+     // "10": "10",
+
+     // "1": "一",
+     // "2": "二",
+     // "3": "三",
+     // "4": "四",
+     // "5": "五",
+     // "6": "六",
+     // "7": "七",
+     // "8": "八",
+     // "9": "九",
+     // "10": "十",
+
+  	"1": "일",
+	"2": "이",
+	"3": "삼",
+	"4": "사",
+	"5": "오",
+	"6": "육",
+	"7": "칠",
+	"8": "팔",
+	"9": "구",
+	"10": "십"
+      }
+  },
+  "hyprland/window": {
+    "format": "{}"
+
+  },
+   "network": {
+   "format": " 󰖩",
+   "tooltip": true,
+   "tooltip-format": "{ifname} ({essid})",
+   "interval": 2
+  },
+  "temperature": {
+    "format": "{icon} {temperatureC}°C ",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-icons": ["❄", "", "🔥"]
+	// ["", "", ""]
+  },
+  "memory": {
+    "format": "󰫗 {}% ",
+    "tooltip": "false"
+  },
+  "cpu": {
+    "format": " {usage}% ",
+    "tooltip": "false"
+  },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+  "custom/powermenu": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "exec wlogout -p layer-shell"
+  },
+  "custom/window": {
+        "exec": "~/.config/waybar/get_program_name.sh",
+        "interval": 1,
+        "format": "{}"
+  }
+
+}

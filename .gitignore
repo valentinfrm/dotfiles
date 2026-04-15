@@ -1,0 +1,4 @@
+.DS_Store
+**/fish_variables
+*.env
+*.local
