@@ -31,6 +31,7 @@ set fish_greeting (set_color --bold efcf40)">"(set_color ef9540)"<"(set_color ea
 
 function fish_user_key_bindings
   fish_vi_key_bindings
+end
 
 # indicator for vi
 function fish_mode_prompt

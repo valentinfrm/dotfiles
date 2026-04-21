@@ -110,10 +110,10 @@
     "tooltip": false,
     "on-click": "exec wlogout -p layer-shell"
   },
-  "custom/window": {
-        "exec": "~/.config/waybar/get_program_name.sh",
-        "interval": 1,
-        "format": "{}"
-  }
+ // "custom/window": {
+ //       "exec": "/home/valentin/.config/waybar/get_program_name.sh",
+ //       "interval": 1,
+ //       "format": "{}"
+ // }
 
 }

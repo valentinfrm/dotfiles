@@ -20,3 +20,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 PS1='\W ❄︎ → '
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    export SSH_AUTH_SOCK=~/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+else
+    export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
+fi
