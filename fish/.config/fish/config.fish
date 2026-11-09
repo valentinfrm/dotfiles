@@ -20,7 +20,7 @@ switch (uname)
     fish_add_path /usr/local/bin
     fish_add_path /opt/bin
     fish_add_path ~/.local/bin
-    set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+    set -gx SSH_AUTH_SOCK "$HOME/.bitwarden-ssh-agent.sock"
 end
 
 # custom greeting
