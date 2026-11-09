@@ -1,5 +1,6 @@
 # aliases
 alias treelist "tree -a -I '.git'"
+alias zed "zeditor"
 
 # prevents apps from closing when closing terminal
 # usaage: stay <command>
